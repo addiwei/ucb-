@@ -1,0 +1,1779 @@
+{
+  "paragraphs": [
+    {
+      "text": "%pyspark\r\n\r\ntempTable \u003d spark.read.load(\"s3a://eim-us-east-1-producbmdmcdw-tenantdata/ucb_us_prod_cdw/client/addi.wei/data_in/CVS_and_Accredo_Delivery1_data_v4.csv\", format\u003d\"csv\", sep\u003d\",\", inferSchema\u003d\"true\", header\u003d\"true\") \r\n\r\ntempTable.createOrReplaceTempView(\"capgem\")\r\n\r\nspark.sql(\"\"\"Create table capgem\r\nUSING PARQUET LOCATION \u0027s3a://eim-us-east-1-producbmdmcdw-tenantdata/ucb_us_prod_cdw/client/addi.wei/capgem/\u0027\r\nas Select * from capgem\"\"\")\r\n",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 13, 2020 10:06:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d14",
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d15",
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d16"
+          ],
+          "interpreterSettingId": "2EKXJUYHA913671566937820009"
+        }
+      },
+      "paragraphProgress": {
+        "jobs": [
+          {
+            "id": 14,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d14",
+            "numTasks": 1,
+            "numCompletedTasks": 1,
+            "stages": [
+              {
+                "id": 14,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d14\u0026attempt\u003d0",
+                "numCompleteTasks": 1,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 1
+              }
+            ],
+            "status": "Success"
+          },
+          {
+            "id": 15,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d15",
+            "numTasks": 4,
+            "numCompletedTasks": 4,
+            "stages": [
+              {
+                "id": 15,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d15\u0026attempt\u003d0",
+                "numCompleteTasks": 4,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 4
+              }
+            ],
+            "status": "Success"
+          },
+          {
+            "id": 16,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d16",
+            "numTasks": 2,
+            "numCompletedTasks": 2,
+            "stages": [
+              {
+                "id": 16,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d16\u0026attempt\u003d0",
+                "numCompleteTasks": 2,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 2
+              }
+            ],
+            "status": "Success"
+          }
+        ],
+        "numCompletedTasks": 7,
+        "numTasks": 7,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584136128937_-746098889",
+      "id": "20200313-214848_1043079696_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "DataFrame[]\n"
+      },
+      "dateCreated": "Mar 13, 2020 9:48:48 PM",
+      "dateSubmitted": "Mar 13, 2020 10:06:31 PM",
+      "dateStarted": "Mar 13, 2020 10:06:31 PM",
+      "dateFinished": "Mar 13, 2020 10:06:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "%pyspark\r\n\r\ntempTable \u003d spark.read.load(\"s3a://eim-us-east-1-producbmdmcdw-tenantdata/ucb_us_prod_cdw/client/addi.wei/data_in/DATA_FILE_WK_08.csv\", format\u003d\"csv\", sep\u003d\",\", inferSchema\u003d\"true\", header\u003d\"true\") \r\n\r\ntempTable.createOrReplaceTempView(\"xpt\")\r\n\r\nspark.sql(\"\"\"Create table xpt\r\nUSING PARQUET LOCATION \u0027s3a://eim-us-east-1-producbmdmcdw-tenantdata/ucb_us_prod_cdw/client/addi.wei/capgem/\u0027\r\nas Select * from xpt\"\"\")",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 13, 2020 10:20:01 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "HCP_NPI_ID",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "HCP_NPI_ID",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "HCP_NameT_firstname",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d20",
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d21",
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d22"
+          ],
+          "interpreterSettingId": "2EKXJUYHA913671566937820009"
+        }
+      },
+      "paragraphProgress": {
+        "jobs": [
+          {
+            "id": 20,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d20",
+            "numTasks": 1,
+            "numCompletedTasks": 1,
+            "stages": [
+              {
+                "id": 20,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d20\u0026attempt\u003d0",
+                "numCompleteTasks": 1,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 1
+              }
+            ],
+            "status": "Success"
+          },
+          {
+            "id": 21,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d21",
+            "numTasks": 4,
+            "numCompletedTasks": 4,
+            "stages": [
+              {
+                "id": 21,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d21\u0026attempt\u003d0",
+                "numCompleteTasks": 4,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 4
+              }
+            ],
+            "status": "Success"
+          },
+          {
+            "id": 22,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d22",
+            "numTasks": 2,
+            "numCompletedTasks": 2,
+            "stages": [
+              {
+                "id": 22,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d22\u0026attempt\u003d0",
+                "numCompleteTasks": 2,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 2
+              }
+            ],
+            "status": "Success"
+          }
+        ],
+        "numCompletedTasks": 7,
+        "numTasks": 7,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584136148115_1857912315",
+      "id": "20200313-214908_971420659_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "DataFrame[]\n"
+      },
+      "dateCreated": "Mar 13, 2020 9:49:08 PM",
+      "dateSubmitted": "Mar 13, 2020 10:20:01 PM",
+      "dateStarted": "Mar 13, 2020 10:20:01 PM",
+      "dateFinished": "Mar 13, 2020 10:20:05 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "calendar_sp \u003d spark.sql(\"\"\"\nSELECT dateid, \n       weekenddate\nFROM ucb_us_prod_cdw_publish.dmn_calendar       \n\"\"\")\n\nhcp_sp \u003d spark.sql(\"\"\"\nSELECT imsrxerid,\n       npi,\n       hcp_system_id,\n       firstname,\n       lastname,\n       ucbspecialty,\n       hcpprimaryspeacility,\n       professioncode,\n       pdrp\nFROM ucb_us_prod_cdw_publish.dmn_hcp\n\"\"\")\n\ncapgem_sp \u003d spark.sql(\"\"\"\nSELECT * \nFROM capgem\n\"\"\")\n\nxpt_sp \u003d spark.sql(\"\"\"\nSELECT *\nFROM xpt\n\"\"\")\n",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 13, 2020 11:12:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "IMS_DR_#",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "IMS_DR_#",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "Product_Pack_#",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584137208513_-695946380",
+      "id": "20200313-220648_126938113_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 13, 2020 10:06:48 PM",
+      "dateSubmitted": "Mar 13, 2020 11:12:25 PM",
+      "dateStarted": "Mar 13, 2020 11:12:25 PM",
+      "dateFinished": "Mar 13, 2020 11:12:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "calendar \u003d calendar_sp.toPandas()\nhcp \u003d hcp_sp.toPandas()\ncapgem \u003d capgem_sp.toPandas()\nxpt \u003d xpt_sp.toPandas()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:37 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d44",
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d45",
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d46",
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d47"
+          ],
+          "interpreterSettingId": "2EKXJUYHA913671566937820009"
+        }
+      },
+      "paragraphProgress": {
+        "jobs": [
+          {
+            "id": 44,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d44",
+            "numTasks": 2,
+            "numCompletedTasks": 2,
+            "stages": [
+              {
+                "id": 44,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d44\u0026attempt\u003d0",
+                "numCompleteTasks": 2,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 2
+              }
+            ],
+            "status": "Success"
+          },
+          {
+            "id": 45,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d45",
+            "numTasks": 400,
+            "numCompletedTasks": 400,
+            "stages": [
+              {
+                "id": 45,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d45\u0026attempt\u003d0",
+                "numCompleteTasks": 400,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 400
+              }
+            ],
+            "status": "Success"
+          },
+          {
+            "id": 46,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d46",
+            "numTasks": 2,
+            "numCompletedTasks": 2,
+            "stages": [
+              {
+                "id": 46,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d46\u0026attempt\u003d0",
+                "numCompleteTasks": 2,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 2
+              }
+            ],
+            "status": "Success"
+          },
+          {
+            "id": 47,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/jobs/job?spark\u003dtrue\u0026id\u003d47",
+            "numTasks": 2,
+            "numCompletedTasks": 2,
+            "stages": [
+              {
+                "id": 47,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.17.174%3A8088%2Fproxy%2Fapplication_1584135942564_0001/stages/stage/?id\u003d47\u0026attempt\u003d0",
+                "numCompleteTasks": 2,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 2
+              }
+            ],
+            "status": "Success"
+          }
+        ],
+        "numCompletedTasks": 406,
+        "numTasks": 406,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584138094491_-419075480",
+      "id": "20200313-222134_1263085799_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 13, 2020 10:21:34 PM",
+      "dateSubmitted": "Mar 14, 2020 3:15:37 AM",
+      "dateStarted": "Mar 14, 2020 3:15:37 AM",
+      "dateFinished": "Mar 14, 2020 3:16:30 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "hcp.head()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:13:39 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584155542811_1946678008",
+      "id": "20200314-031222_903641988_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "  imsrxerid         npi hcp_system_id firstname   lastname  \\\n0                             00sNewI    ELAINE       MAIR   \n1                             012XVSo      JEFF      BROWN   \n2                             018KDjD   SHELLEY      JAMAL   \n3            1760598023       01JM6OU     IRENE    TARIMAN   \n4            1225598261       01LZrtw   VANESSA  HERNANDEZ   \n\n                               ucbspecialty  \\\n0                            NOT APPLICABLE   \n1                            NOT APPLICABLE   \n2                            NOT APPLICABLE   \n3  SPECIALIST/TECHNOLOGIST/TECHNICIAN-OTHER   \n4       BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES   \n\n                       hcpprimaryspeacility professioncode   pdrp  \n0                            NOT APPLICABLE             16  False  \n1                            NOT APPLICABLE             16  False  \n2                            NOT APPLICABLE             16  False  \n3  SPECIALIST/TECHNOLOGIST/TECHNICIAN-OTHER             97  False  \n4       BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES             22  False  \n"
+      },
+      "dateCreated": "Mar 14, 2020 3:12:22 AM",
+      "dateSubmitted": "Mar 14, 2020 3:13:39 AM",
+      "dateStarted": "Mar 14, 2020 3:13:39 AM",
+      "dateFinished": "Mar 14, 2020 3:13:39 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Fill None values for hcp as empty string\n\nmask \u003d hcp.applymap(lambda x: x is None)\ncols \u003d hcp.columns[(mask).any()]\nfor col in hcp[cols]:\n    hcp.loc[mask[col], col] \u003d \u0027\u0027",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:40 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584147432719_483004839",
+      "id": "20200314-005712_54297684_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:57:12 AM",
+      "dateSubmitted": "Mar 14, 2020 3:15:40 AM",
+      "dateStarted": "Mar 14, 2020 3:16:30 AM",
+      "dateFinished": "Mar 14, 2020 3:16:42 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "%sh\nsudo yum install python35 -y",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 12:18:40 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584145119418_845865212",
+      "id": "20200314-001839_613998493_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Loaded plugins: fastestmirror, priorities, update-motd, upgrade-helper\nLoading mirror speeds from cached hostfile\n * amzn-hvm: packages.us-east-1.amazonaws.com\n * amzn-main: packages.us-east-1.amazonaws.com\n * amzn-updates: packages.us-east-1.amazonaws.com\n69 packages excluded due to repository priority protections\nResolving Dependencies\n--\u003e Running transaction check\n---\u003e Package python35.x86_64 0:3.5.7-1.25.amzn1 will be installed\n--\u003e Processing Dependency: python35-libs(x86-64) \u003d 3.5.7-1.25.amzn1 for package: python35-3.5.7-1.25.amzn1.x86_64\n--\u003e Processing Dependency: libpython3.5m.so.1.0()(64bit) for package: python35-3.5.7-1.25.amzn1.x86_64\n--\u003e Running transaction check\n---\u003e Package python35-libs.x86_64 0:3.5.7-1.25.amzn1 will be installed\n--\u003e Finished Dependency Resolution\n\nDependencies Resolved\n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n Package            Arch        Version                 Repository         Size\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nInstalling:\n python35           x86_64      3.5.7-1.25.amzn1        amzn-updates       56 k\nInstalling for dependencies:\n python35-libs      x86_64      3.5.7-1.25.amzn1        amzn-updates       12 M\n\nTransaction Summary\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nInstall  1 Package (+1 Dependent package)\n\nTotal download size: 12 M\nInstalled size: 38 M\nDownloading packages:\n--------------------------------------------------------------------------------\nTotal                                               12 MB/s |  12 MB  00:01     \nRunning transaction check\nRunning transaction test\nTransaction test succeeded\nRunning transaction\n  Installing : python35-libs-3.5.7-1.25.amzn1.x86_64                        1/2 \n  Installing : python35-3.5.7-1.25.amzn1.x86_64                             2/2 \n  Verifying  : python35-3.5.7-1.25.amzn1.x86_64                             1/2 \n  Verifying  : python35-libs-3.5.7-1.25.amzn1.x86_64                        2/2 \n\nInstalled:\n  python35.x86_64 0:3.5.7-1.25.amzn1                                            \n\nDependency Installed:\n  python35-libs.x86_64 0:3.5.7-1.25.amzn1                                       \n\nComplete!\n"
+      },
+      "dateCreated": "Mar 14, 2020 12:18:39 AM",
+      "dateSubmitted": "Mar 14, 2020 12:18:40 AM",
+      "dateStarted": "Mar 14, 2020 12:18:40 AM",
+      "dateFinished": "Mar 14, 2020 12:18:45 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "import pandas as pd \nimport numpy as np",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 13, 2020 11:44:50 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584143082562_1186488413",
+      "id": "20200313-234442_607502610_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 13, 2020 11:44:42 PM",
+      "dateSubmitted": "Mar 13, 2020 11:44:50 PM",
+      "dateStarted": "Mar 13, 2020 11:44:50 PM",
+      "dateFinished": "Mar 13, 2020 11:44:50 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "hcp.shape",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 2:33:35 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584141563722_-80083587",
+      "id": "20200313-231923_1320734810_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "(4230916, 9)\n"
+      },
+      "dateCreated": "Mar 13, 2020 11:19:23 PM",
+      "dateSubmitted": "Mar 14, 2020 2:33:35 AM",
+      "dateStarted": "Mar 14, 2020 2:33:35 AM",
+      "dateFinished": "Mar 14, 2020 2:33:35 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Sets the index value of Dr. Cristin Shaughnessy NPI ID: 1649624438. There is duplicate data here and will delete the row with null value by the index\n\nmyindex\u003d hcp[hcp.npi \u003d\u003d \u00271649624438\u0027].index\nindex_series \u003d pd.Series(hcp[hcp.npi \u003d\u003d \u00271649624438\u0027][\u0027imsrxerid\u0027].isnull(), index\u003dmyindex)\nindex_null \u003d index_series[index_series].index\nhcp \u003d hcp.drop(index_null, axis\u003d0)\n\n# Manually change the imsrxerid of NPI ID: 1699132894 to \u00270000000\u0027\nmyindex \u003d hcp[hcp.npi \u003d\u003d \u00271699132894\u0027].index\nhcp.iloc[myindex[0]][\u0027imsrxerid\u0027] \u003d \u00270000000\u0027\n\n# Manually change the IMS ID of 3 doctors per Ozge\u0027s email on 3/9  \nindex1 \u003d hcp[hcp.hcp_system_id \u003d\u003d \u0027o8SGcXn\u0027].index\nindex2 \u003d hcp[hcp.hcp_system_id \u003d\u003d \u0027twujbp9\u0027].index\nindex3 \u003d hcp[hcp.hcp_system_id \u003d\u003d \u0027EmhiE8O\u0027].index\n\nhcp.iloc[index1[0]][\u0027imsrxerid\u0027] \u003d \u00276788628\u0027\nhcp.iloc[index2[0]][\u0027imsrxerid\u0027] \u003d \u00276905753\u0027\nhcp.iloc[index3[0]][\u0027imsrxerid\u0027] \u003d \u00277037981\u0027",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:45 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584140803769_1208556495",
+      "id": "20200313-230643_72817205_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 13, 2020 11:06:43 PM",
+      "dateSubmitted": "Mar 14, 2020 3:16:30 AM",
+      "dateStarted": "Mar 14, 2020 3:16:43 AM",
+      "dateFinished": "Mar 14, 2020 3:16:47 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Sets calendar features to datetime format \r\n\r\ncalendar[\u0027dateid\u0027] \u003d calendar[\u0027dateid\u0027].apply(lambda x: pd.to_datetime(str(x), format\u003d\u0027%Y%m%d\u0027))\r\ncalendar[\u0027weekenddate\u0027] \u003d calendar[\u0027weekenddate\u0027].apply(lambda x: pd.to_datetime(str(x), format\u003d\u0027%Y%m%d\u0027))",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:48 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584140856455_-1859923253",
+      "id": "20200313-230736_1335518509_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 13, 2020 11:07:36 PM",
+      "dateSubmitted": "Mar 14, 2020 3:16:43 AM",
+      "dateStarted": "Mar 14, 2020 3:16:48 AM",
+      "dateFinished": "Mar 14, 2020 3:16:49 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# # Strip white space \r\n\r\n# xpt \u003d xpt.apply(lambda x: x.str.strip() if x.dtype \u003d\u003d \"object\" else x)\r\n# calendar \u003d calendar.apply(lambda x: x.str.strip() if x.dtype \u003d\u003d \"object\" else x)\r\n# capgem \u003d capgem.apply(lambda x: x.str.strip() if x.dtype \u003d\u003d \"object\" else x)\r\n\r\n# # Set these columns as string type\r\n# hcp[\u0027imsrxerid\u0027] \u003d hcp[\u0027imsrxerid\u0027].astype(str)\r\n# xpt[\u0027IMS_DR_#\u0027] \u003d xpt[\u0027IMS_DR_#\u0027].astype(str)",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:36 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584144840002_452501883",
+      "id": "20200314-001400_1429202927_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:14:00 AM",
+      "dateSubmitted": "Mar 14, 2020 3:14:28 AM",
+      "dateStarted": "Mar 14, 2020 3:14:28 AM",
+      "dateFinished": "Mar 14, 2020 3:14:56 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Create Prod Map table \r\n\r\nprod_id_map \u003d pd.DataFrame(columns\u003d[\u0027PROD_CD\u0027,\u0027Prod Pack #\u0027,\u0027PRODUCT NDC\u0027,\u0027Product Description\u0027])\r\nprod_id_map \u003d prod_id_map.append({\"PROD_CD\": \"WcuvVNt\",\r\n                                  \"Prod Pack #\":  1164693001,\r\n                                  \"PRODUCT NDC\": 50474070062,\r\n                                  \"Product Description\": \"CIMZIA,KIT VIAL,400MG,1 0700-62\"\r\n                                  }, ignore_index\u003dTrue)\r\nprod_id_map \u003d prod_id_map.append({\"PROD_CD\": \"tfxmbrp\",\r\n                                  \"Prod Pack #\":  1164693002,\r\n                                  \"PRODUCT NDC\": 50474071079,\r\n                                  \"Product Description\": \"CIMZIA,KIT SYRINGE,400MG,1 0710-79\"\r\n                                  }, ignore_index\u003dTrue)\r\nprod_id_map \u003d prod_id_map.append({\"PROD_CD\": \"FzRXYK0\",\r\n                                  \"Prod Pack #\":  1164693003,\r\n                                  \"PRODUCT NDC\": 50474071081,\r\n                                  \"Product Description\": \"CIMZIA,KIT STARTER,200MG,1X3 0710-81\"\r\n                                  }, ignore_index\u003dTrue)",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:50 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584143108797_1367735794",
+      "id": "20200313-234508_1235877554_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 13, 2020 11:45:08 PM",
+      "dateSubmitted": "Mar 14, 2020 3:16:48 AM",
+      "dateStarted": "Mar 14, 2020 3:16:49 AM",
+      "dateFinished": "Mar 14, 2020 3:16:49 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Renames the columns that have \u0027TQTY-\u0027\r\n\r\nxpt.columns \u003d [\u0027IMS DR #\u0027, \u0027Product Pack #\u0027, \u0027Sales Channel\u0027] + list(xpt.iloc[:,3:].columns.str[5:])\r\n\r\n# Address missing leading zeros in IMS DR #\r\n\r\nxpt[\u0027IMS DR #\u0027] \u003d xpt[\u0027IMS DR #\u0027].apply(lambda x: \u0027{0:0\u003e7}\u0027.format(x))\r\n\r\n# \u0027Melt\u0027 or transpose the table to bring shipment dates into rows\r\n\r\nxpt_melted \u003d pd.melt(xpt, id_vars\u003d[\u0027IMS DR #\u0027, \u0027Product Pack #\u0027, \u0027Sales Channel\u0027], var_name\u003d\u0027Shipment Date\u0027, value_name\u003d\u0027Shipped Qty\u0027)\r\n\r\n# Convert \u0027Shipment Date\u0027 to datetime format\r\n\r\nxpt_melted[\u0027Shipment Date\u0027] \u003d pd.to_datetime(xpt_melted[\u0027Shipment Date\u0027], format\u003d\"%m/%d/%y\")\r\n\r\n# Filter on the appropriate date range\r\n\r\nxpt_melted_date \u003d xpt_melted[(xpt_melted[\u0027Shipment Date\u0027] \u003e\u003d \u002702/24/2018\u0027) \u0026 \r\n                (xpt_melted[\u0027Shipment Date\u0027] \u003c\u003d \u002702/28/2020\u0027)]\r\n                \r\n\r\n# Merge XPT with calendar to get weekenddate\r\n\r\nmerged_xpt \u003d xpt_melted_date.merge(calendar, how\u003d\u0027left\u0027, left_on\u003d\u0027Shipment Date\u0027, right_on\u003d\u0027dateid\u0027)\r\n\r\n# Aggregate shipped quantity after grouping\r\n\r\nxpt_agg \u003d (merged_xpt.groupby([\u0027IMS DR #\u0027, \u0027Product Pack #\u0027, \u0027Sales Channel\u0027, \u0027weekenddate\u0027]).agg({\u0027Shipped Qty\u0027:sum}).reset_index())\r\n",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:52 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584145956210_535180213",
+      "id": "20200314-003236_798098725_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:32:36 AM",
+      "dateSubmitted": "Mar 14, 2020 3:16:49 AM",
+      "dateStarted": "Mar 14, 2020 3:16:49 AM",
+      "dateFinished": "Mar 14, 2020 3:16:59 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "xpt_agg[\u0027Shipped Qty\u0027].sum()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:55 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146123932_-1857494931",
+      "id": "20200314-003523_1867197004_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "282461.9100000081\n"
+      },
+      "dateCreated": "Mar 14, 2020 12:35:23 AM",
+      "dateSubmitted": "Mar 14, 2020 3:16:50 AM",
+      "dateStarted": "Mar 14, 2020 3:16:59 AM",
+      "dateFinished": "Mar 14, 2020 3:16:59 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Create hash tables to map values\r\n\r\nprod_dict_xpt \u003d pd.Series(prod_id_map.PROD_CD.values,index\u003dprod_id_map[\u0027Prod Pack #\u0027]).to_dict()\r\nhcp_dict_xpt \u003d pd.Series(hcp.hcp_system_id.values,index\u003dhcp.imsrxerid).to_dict()\r\n\r\n#Manually add 3 entries to our IMS to HCP ID dictionary\r\nhcp_dict_xpt[\u00276788628\u0027] \u003d \u0027o8SGcXn\u0027\r\nhcp_dict_xpt[\u00276905753\u0027] \u003d \u0027twujbp9\u0027\r\nhcp_dict_xpt[\u00277037981\u0027] \u003d \u0027EmhiE8O\u0027",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:57 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146135931_1072768016",
+      "id": "20200314-003535_2115738375_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:35:35 AM",
+      "dateSubmitted": "Mar 14, 2020 3:16:59 AM",
+      "dateStarted": "Mar 14, 2020 3:16:59 AM",
+      "dateFinished": "Mar 14, 2020 3:17:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Create File 1 for XPT  \r\n\r\nfile1_xpt \u003d pd.DataFrame()\r\nfile1_xpt[\u0027PROD_CD\u0027] \u003d xpt_agg[\u0027Product Pack #\u0027].map(prod_dict_xpt)\r\nfile1_xpt[\u0027BRE_MKT_CD\u0027] \u003d \u0027STEazXN\u0027\r\nfile1_xpt[\u0027BRE_SUBMKT_CD\u0027] \u003d \u002716pTn9Qb\u0027\r\nfile1_xpt[\u0027BRE_PRDGRP_CD\u0027] \u003d \u0027yxzvVMO\u0027\r\nfile1_xpt[\u0027INDICATION\u0027] \u003d \u0027CORE\u0027\r\nfile1_xpt[\u0027PLAN_ID\u0027] \u003d \u002712345\u0027\r\nfile1_xpt[\u0027CHN\u0027] \u003d xpt_agg[\u0027Sales Channel\u0027]\r\nfile1_xpt[\u0027IMS_ID\u0027] \u003d xpt_agg[\u0027IMS DR #\u0027]\r\nfile1_xpt[\u0027MDM_CUSTOMER_ID\u0027] \u003d xpt_agg[\u0027IMS DR #\u0027].map(hcp_dict_xpt)\r\nfile1_xpt[\u0027KEY2\u0027] \u003d np.NaN\r\nfile1_xpt[\u0027PER_ID_DT\u0027] \u003d xpt_agg.weekenddate \r\nfile1_xpt[\u0027PER_TYP\u0027] \u003d \u0027X\u0027\r\nfile1_xpt[\u0027CORE_TRX\u0027] \u003d 0\r\nfile1_xpt[\u0027CORE_NRX\u0027] \u003d 0\r\nfile1_xpt[\u0027CORE_TQTY\u0027] \u003d xpt_agg[\u0027Shipped Qty\u0027]\r\nfile1_xpt[\u0027CORE_NQTY\u0027] \u003d 0\r\nfile1_xpt[\u0027TRANS_TRX\u0027] \u003d 0\r\nfile1_xpt[\u0027TRANS_NRX\u0027] \u003d 0\r\nfile1_xpt[\u0027TRANS_DOLLARIZED_TQTY\u0027] \u003d 0\r\n\r\n# Set the proper column order\r\n\r\nfile1_xpt \u003d file1_xpt[[\u0027BRE_MKT_CD\u0027,\u0027BRE_SUBMKT_CD\u0027,\u0027BRE_PRDGRP_CD\u0027, \u0027PROD_CD\u0027, \u0027INDICATION\u0027, \u0027PLAN_ID\u0027, \u0027CHN\u0027, \r\n                    \u0027IMS_ID\u0027, \u0027MDM_CUSTOMER_ID\u0027, \u0027KEY2\u0027, \u0027PER_ID_DT\u0027, \u0027PER_TYP\u0027, \u0027CORE_TRX\u0027, \u0027CORE_NRX\u0027,\r\n                    \u0027CORE_TQTY\u0027, \u0027CORE_NQTY\u0027, \u0027TRANS_TRX\u0027, \u0027TRANS_NRX\u0027, \u0027TRANS_DOLLARIZED_TQTY\u0027]]",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:15:59 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146157711_-1369435756",
+      "id": "20200314-003557_1303354872_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:35:57 AM",
+      "dateSubmitted": "Mar 14, 2020 3:16:59 AM",
+      "dateStarted": "Mar 14, 2020 3:17:02 AM",
+      "dateFinished": "Mar 14, 2020 3:17:08 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Start processing for CapGem File 1\r\n\r\ncapgem[\u0027Shipment Date\u0027] \u003d  pd.to_datetime(capgem[\u0027Shipment_Date\u0027])",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:03 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146179634_-157430748",
+      "id": "20200314-003619_139294840_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:36:19 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:02 AM",
+      "dateStarted": "Mar 14, 2020 3:17:08 AM",
+      "dateFinished": "Mar 14, 2020 3:17:23 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "capgem[\u0027Shipped_Qty\u0027].sum()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:06 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146205591_316995294",
+      "id": "20200314-003645_1210167042_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "169817\n"
+      },
+      "dateCreated": "Mar 14, 2020 12:36:45 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:08 AM",
+      "dateStarted": "Mar 14, 2020 3:17:23 AM",
+      "dateFinished": "Mar 14, 2020 3:17:23 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Filter on appropriate date period (Week Ending inclusive)  \r\n\r\ncapgem \u003d capgem[(capgem[\u0027Shipment Date\u0027] \u003e\u003d \u002702/24/2018\u0027) \u0026 \r\n                (capgem[\u0027Shipment Date\u0027] \u003c\u003d \u002702/28/2020\u0027)]",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:07 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146238303_-592304275",
+      "id": "20200314-003718_1718592458_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:37:18 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:23 AM",
+      "dateStarted": "Mar 14, 2020 3:17:23 AM",
+      "dateFinished": "Mar 14, 2020 3:17:23 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Check if there are any NULL or invalid NPI ID that are not in Qubole database\r\n\r\ncapgem[(~capgem[\u0027HCP_NPI_ID\u0027].isin(hcp.npi)) | (capgem[\u0027HCP_NPI_ID\u0027].isnull())]",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:09 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146256158_-1591097095",
+      "id": "20200314-003736_1853052380_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "          HCP_NPI_ID HCP_NameT_firstname HCP_NameT_middlename  \\\n44      1.598756e+09            NICHOLAS                 None   \n45      1.588691e+09          CHIEN-HUAN                 None   \n46      1.437125e+09         CHRISTOPHER                 None   \n47      1.548344e+09               LUCHI                    S   \n48      1.679501e+09                LEAH                 None   \n49      1.063694e+09                LYNN                 None   \n50      1.760450e+09              STEVEN                 None   \n52      1.558370e+09               DAVID                 None   \n53      1.659305e+09              CARLOS                 None   \n54      1.598122e+09               NANCY                 None   \n55      1.730294e+09              ROBERT                    W   \n56      1.447241e+09               DAVID                 None   \n57      1.326052e+09           HARVINDER                 None   \n58      1.508867e+09            MICHELLE                 None   \n59      1.194715e+09             MICHAEL                 None   \n60      1.881686e+09             CHARLES                 None   \n61      1.063420e+09            DAVENDRA                    P   \n62      1.114955e+09                ERIC                 None   \n63      1.194810e+09       GHEORGHE PAUL                 None   \n64      1.720029e+09             MEHRNAZ                 None   \n65      1.265674e+09             KRISTIN                 None   \n66      1.265520e+09              RACHEL                 None   \n67      1.649295e+09                MARK                 None   \n68      1.063417e+09               BRYAN                 None   \n69      1.639119e+09                 SAM                 None   \n84      1.174587e+09              ANDREW                 None   \n85      1.124154e+09                ROEL                 None   \n86      1.619967e+09               BRUCE                 None   \n87      1.518952e+09             DOUGLAS                 None   \n88      1.568412e+09             EUGENIO                 None   \n...              ...                 ...                  ...   \n136286  1.801879e+09               YA JU                 None   \n136287  1.548546e+09             LINDSAY                 None   \n136288  1.003824e+09           KATHERINE                 None   \n136289  1.548383e+09              CURTIS                 None   \n136290  1.548387e+09              MONIKA                 None   \n136292  1.972680e+09           CHRISTINA                 None   \n136293  1.134105e+09             JEFFREY                 None   \n136294  1.477549e+09             MICHAEL                 None   \n136295  1.346229e+09              DONALD                 None   \n136297  1.689750e+09              LISA A                 None   \n136298  1.083039e+09                SARA                 None   \n136299  1.982615e+09                MAYA                 None   \n136300  1.649493e+09           ELIZABETH                 None   \n136301  1.073676e+09               SAIMA                 None   \n136302  1.649291e+09            ROBERT M                 None   \n136303  1.609990e+09               JAMES                 None   \n136304  1.487767e+09              KANWAL                 None   \n136305  1.467487e+09           CHRISTINA                 None   \n136306  1.831259e+09            BETH-ANN                 None   \n136307  1.811212e+09               NIHAD                 None   \n136308  1.881674e+09               FABIO                 None   \n136309  1.316227e+09             SHANNON                 None   \n136310  1.932505e+09              KINDRA                 None   \n136311  1.295875e+09                 AMY                 None   \n136312  1.790979e+09             HEITHAM                 None   \n136313  1.316929e+09              DANIEL                 None   \n136314  1.497074e+09             JESSICA                 None   \n136315  1.831330e+09           CHRISTOPH                 None   \n136316  1.881613e+09               DAVID                 None   \n136317  1.568766e+09               JAMIE                 None   \n\n       HCP_NameT_lastname Source_Name  Product_NDC Shipment_Date  Shipped_Qty  \\\n44               TILIAKOS     ACCREDO  50474071079     2/26/2018            1   \n45                   CHEN     ACCREDO  50474071079     2/26/2018            1   \n46                MANNING     ACCREDO  50474071079     2/26/2018            1   \n47               QUINONES     ACCREDO  50474071079     2/26/2018            1   \n48               TRIPLETT     ACCREDO  50474071079     2/26/2018            1   \n49               CONNOLLY     ACCREDO  50474071079     2/26/2018            1   \n50               GOLOMBEK     ACCREDO  50474071079     2/26/2018            1   \n52                 MANDEL     ACCREDO  50474071079     2/26/2018            3   \n53                  SESIN     ACCREDO  50474071079     2/26/2018            1   \n54               NICOLOSI     ACCREDO  50474071079     2/26/2018            3   \n55                JACKSON     ACCREDO  50474071079     2/26/2018            1   \n56             GREENBLATT     ACCREDO  50474071079     2/26/2018            1   \n57                  SAHNI     ACCREDO  50474071079     2/26/2018            1   \n58                 MCCAIN     ACCREDO  50474071079     2/26/2018            1   \n59                KREINES     ACCREDO  50474071079     2/26/2018            1   \n60                    FOX     ACCREDO  50474071079     2/26/2018            1   \n61               RAMKUMAR     ACCREDO  50474071079     2/26/2018            1   \n62           VASILIAUSKAS     ACCREDO  50474071079     2/26/2018            1   \n63                  IGNAT     ACCREDO  50474071079     2/26/2018            1   \n64                HOJJATI     ACCREDO  50474071079     2/26/2018            1   \n65                ETZKORN     ACCREDO  50474071079     2/26/2018            1   \n66                   WATE     ACCREDO  50474071079     2/26/2018            1   \n67                CHAPMAN     ACCREDO  50474071079     2/26/2018            2   \n68                  WOODS     ACCREDO  50474071079     2/26/2018            1   \n69                 ANOUNA     ACCREDO  50474071079     2/26/2018            1   \n84                 UKLEJA     ACCREDO  50474071079      3/5/2018            3   \n85               QUERUBIN     ACCREDO  50474071079      3/5/2018            1   \n86                STROBER     ACCREDO  50474071079      3/5/2018            1   \n87                 KLIONS     ACCREDO  50474071079      3/5/2018            1   \n88                CAPITLE     ACCREDO  50474071079      3/5/2018            1   \n...                   ...         ...          ...           ...          ...   \n136286              CHANG         CVS  50474071079    10/15/2018            1   \n136287            HARLOCK         CVS  50474071079     8/14/2018            1   \n136288             KOSCHE         CVS  50474071079     8/22/2018            1   \n136289             WEAVER         CVS  50474071079     9/21/2018            1   \n136290           STAROSTA         CVS  50474071079    11/21/2018            1   \n136292            COVELLI         CVS  50474071079     12/4/2018            1   \n136293              SMITH         CVS  50474071079    12/20/2018            2   \n136294          WATTERSON         CVS  50474071079     8/19/2019            1   \n136295              SCOTT         CVS  50474071081     8/22/2019            1   \n136297               JUNE         CVS  50474071079     3/12/2018            1   \n136298             MILLER         CVS  50474071079    10/22/2018            1   \n136299         SRIVASTAVA         CVS  50474071079     7/14/2019            1   \n136300            KESSLER         CVS  50474071079     7/22/2019            1   \n136301             CHOHAN         CVS  50474071079     7/24/2019            1   \n136302            GAY, JR         CVS  50474071079     5/29/2019            1   \n136303             THOMAS         CVS  50474071079    12/12/2018            1   \n136304             KHANNA         CVS  50474071079     3/13/2018            1   \n136305            CHARLES         CVS  50474071079      1/7/2019            1   \n136306             NORTON         CVS  50474071079    10/31/2018            1   \n136307             YASMIN         CVS  50474071079     7/25/2019            1   \n136308              OCHOA         CVS  50474071079     8/14/2019            1   \n136309             FAIRES         CVS  50474071079     9/19/2018            1   \n136310      CLARK-SNUSTAD         CVS  50474071079     9/20/2018            1   \n136311             DEDEKE         CVS  50474071079    12/19/2018            1   \n136312         ABDUL BAKI         CVS  50474071079      4/3/2018            1   \n136313             BRANDT         CVS  50474071079      4/3/2018            1   \n136314         THUERINGER         CVS  50474071081     1/21/2019            1   \n136315              CHONG         CVS  50474071079     8/21/2019            1   \n136316             GATOFF         CVS  50474071079     6/17/2019            1   \n136317             TIGNER         CVS  50474071079     5/15/2019            1   \n\n       Shipment Date  \n44        2018-02-26  \n45        2018-02-26  \n46        2018-02-26  \n47        2018-02-26  \n48        2018-02-26  \n49        2018-02-26  \n50        2018-02-26  \n52        2018-02-26  \n53        2018-02-26  \n54        2018-02-26  \n55        2018-02-26  \n56        2018-02-26  \n57        2018-02-26  \n58        2018-02-26  \n59        2018-02-26  \n60        2018-02-26  \n61        2018-02-26  \n62        2018-02-26  \n63        2018-02-26  \n64        2018-02-26  \n65        2018-02-26  \n66        2018-02-26  \n67        2018-02-26  \n68        2018-02-26  \n69        2018-02-26  \n84        2018-03-05  \n85        2018-03-05  \n86        2018-03-05  \n87        2018-03-05  \n88        2018-03-05  \n...              ...  \n136286    2018-10-15  \n136287    2018-08-14  \n136288    2018-08-22  \n136289    2018-09-21  \n136290    2018-11-21  \n136292    2018-12-04  \n136293    2018-12-20  \n136294    2019-08-19  \n136295    2019-08-22  \n136297    2018-03-12  \n136298    2018-10-22  \n136299    2019-07-14  \n136300    2019-07-22  \n136301    2019-07-24  \n136302    2019-05-29  \n136303    2018-12-12  \n136304    2018-03-13  \n136305    2019-01-07  \n136306    2018-10-31  \n136307    2019-07-25  \n136308    2019-08-14  \n136309    2018-09-19  \n136310    2018-09-20  \n136311    2018-12-19  \n136312    2018-04-03  \n136313    2018-04-03  \n136314    2019-01-21  \n136315    2019-08-21  \n136316    2019-06-17  \n136317    2019-05-15  \n\n[134977 rows x 9 columns]\n"
+      },
+      "dateCreated": "Mar 14, 2020 12:37:36 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:23 AM",
+      "dateStarted": "Mar 14, 2020 3:17:23 AM",
+      "dateFinished": "Mar 14, 2020 3:17:26 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Join capgem with calendar file to add weekenddate\n\nmerged_capgem \u003d capgem.merge(calendar, how\u003d\u0027left\u0027, left_on\u003d\u0027Shipment Date\u0027, right_on\u003d\u0027dateid\u0027)",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:13 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146253353_420385479",
+      "id": "20200314-003733_1231088252_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:37:33 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:24 AM",
+      "dateStarted": "Mar 14, 2020 3:17:26 AM",
+      "dateFinished": "Mar 14, 2020 3:17:26 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "merged_capgem[\u0027Shipped_Qty\u0027].sum()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:16 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146348303_2064740981",
+      "id": "20200314-003908_1608993974_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "168225\n"
+      },
+      "dateCreated": "Mar 14, 2020 12:39:08 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:26 AM",
+      "dateStarted": "Mar 14, 2020 3:17:26 AM",
+      "dateFinished": "Mar 14, 2020 3:17:26 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Aggregate shipped quantity after grouping\r\n\r\nhcp_agg \u003d (merged_capgem.groupby([\u0027HCP_NPI_ID\u0027, \u0027Product_NDC\u0027, \u0027weekenddate\u0027]).agg({\u0027Shipped_Qty\u0027:sum}).reset_index())",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:18 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146375394_-1409679505",
+      "id": "20200314-003935_1909414111_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:39:35 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:26 AM",
+      "dateStarted": "Mar 14, 2020 3:17:26 AM",
+      "dateFinished": "Mar 14, 2020 3:17:26 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Convert HCP_NPI_ID to a float, integer, and then a string in order to do the mapping\n\nhcp_agg[\u0027HCP_NPI_ID\u0027] \u003d [float(x) for x in hcp_agg[\u0027HCP_NPI_ID\u0027]]\nhcp_agg[\u0027HCP_NPI_ID\u0027] \u003d [int(x) for x in hcp_agg[\u0027HCP_NPI_ID\u0027]]\nhcp_agg[\u0027HCP_NPI_ID\u0027] \u003d hcp_agg[\u0027HCP_NPI_ID\u0027].astype(str)\n",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:20 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584149940728_929848265",
+      "id": "20200314-013900_1450336670_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 1:39:00 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:26 AM",
+      "dateStarted": "Mar 14, 2020 3:17:26 AM",
+      "dateFinished": "Mar 14, 2020 3:17:27 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Create hash tables necessary to map the PROD_CD, HCP_IDs, imsrxerid \r\nprod_dict \u003d pd.Series(prod_id_map.PROD_CD.values,index\u003dprod_id_map[\u0027PRODUCT NDC\u0027]).to_dict()\r\nmdm_dict \u003d pd.Series(hcp.hcp_system_id.values,index\u003dhcp.npi).to_dict()\r\nims_dict \u003d pd.Series(hcp.imsrxerid.values,index\u003dhcp.npi).to_dict()\r\n\r\n#Convert values to strings\r\nims_dict \u003d dict(zip([str(value) for value in ims_dict.keys()], ims_dict.values()))\r\nmdm_dict \u003d dict(zip([str(value) for value in mdm_dict.keys()], mdm_dict.values()))",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:22 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146406203_165128392",
+      "id": "20200314-004006_2000434487_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:40:06 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:27 AM",
+      "dateStarted": "Mar 14, 2020 3:17:27 AM",
+      "dateFinished": "Mar 14, 2020 3:17:37 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Create File 1 for Cap Gemini  \r\nfile1_cg \u003d pd.DataFrame()\r\n\r\nfile1_cg[\u0027PROD_CD\u0027] \u003d hcp_agg[\u0027Product_NDC\u0027].map(prod_dict)\r\nfile1_cg[\u0027BRE_MKT_CD\u0027] \u003d \u0027STEazXN\u0027\r\nfile1_cg[\u0027BRE_SUBMKT_CD\u0027] \u003d \u002716pTn9Qb\u0027\r\nfile1_cg[\u0027BRE_PRDGRP_CD\u0027] \u003d \u0027yxzvVMO\u0027\r\nfile1_cg[\u0027INDICATION\u0027] \u003d \u0027CORE\u0027\r\nfile1_cg[\u0027PLAN_ID\u0027] \u003d \u002712345\u0027\r\nfile1_cg[\u0027CHN\u0027] \u003d 9 \r\n\r\nfile1_cg[\u0027IMS_ID\u0027] \u003d hcp_agg[\u0027HCP_NPI_ID\u0027].map(ims_dict)\r\nfile1_cg[\u0027MDM_CUSTOMER_ID\u0027] \u003d hcp_agg[\u0027HCP_NPI_ID\u0027].map(mdm_dict)\r\nfile1_cg[\u0027KEY2\u0027] \u003d np.NaN\r\nfile1_cg[\u0027PER_ID_DT\u0027] \u003d hcp_agg.weekenddate \r\nfile1_cg[\u0027PER_TYP\u0027] \u003d \u0027X\u0027\r\nfile1_cg[\u0027CORE_TRX\u0027] \u003d 0\r\nfile1_cg[\u0027CORE_NRX\u0027] \u003d 0\r\nfile1_cg[\u0027CORE_TQTY\u0027] \u003d hcp_agg[\u0027Shipped_Qty\u0027]\r\nfile1_cg[\u0027CORE_NQTY\u0027] \u003d 0\r\nfile1_cg[\u0027TRANS_TRX\u0027] \u003d 0\r\nfile1_cg[\u0027TRANS_NRX\u0027] \u003d 0\r\nfile1_cg[\u0027TRANS_DOLLARIZED_TQTY\u0027] \u003d 0\r\n\r\n# Set the proper column order\r\nfile1_cg \u003d file1_cg[[\u0027BRE_MKT_CD\u0027,\u0027BRE_SUBMKT_CD\u0027,\u0027BRE_PRDGRP_CD\u0027, \u0027PROD_CD\u0027, \u0027INDICATION\u0027, \u0027PLAN_ID\u0027, \u0027CHN\u0027, \r\n                    \u0027IMS_ID\u0027, \u0027MDM_CUSTOMER_ID\u0027, \u0027KEY2\u0027, \u0027PER_ID_DT\u0027, \u0027PER_TYP\u0027, \u0027CORE_TRX\u0027, \u0027CORE_NRX\u0027,\r\n                    \u0027CORE_TQTY\u0027, \u0027CORE_NQTY\u0027, \u0027TRANS_TRX\u0027, \u0027TRANS_NRX\u0027, \u0027TRANS_DOLLARIZED_TQTY\u0027]]\r\n\r\n#quantity 13 was verified by checking as not being able to matched to CDW.  We\u0027ll keep all of the data minus the nulls                     \r\nfile1_cg \u003d file1_cg[~file1_cg[\u0027IMS_ID\u0027].isnull()]",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:23 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146568994_1477535894",
+      "id": "20200314-004248_27292423_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:42:48 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:27 AM",
+      "dateStarted": "Mar 14, 2020 3:17:37 AM",
+      "dateFinished": "Mar 14, 2020 3:17:43 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Remove rows in XPT in which TQTY is 0 \r\n\r\nfile1_xpt \u003d file1_xpt[file1_xpt.CORE_TQTY !\u003d 0]\r\n\r\n# Merge XPT and CapGem file\r\n\r\nfile1_combined \u003d pd.concat([file1_cg, file1_xpt])\r\n\r\n# Previous column of null values had to be excluded from the group by\r\n\r\nfile1_missing_null \u003d file1_combined.groupby([\u0027BRE_MKT_CD\u0027, \u0027BRE_SUBMKT_CD\u0027, \u0027BRE_PRDGRP_CD\u0027, \u0027PROD_CD\u0027, \u0027INDICATION\u0027, \u0027PLAN_ID\u0027, \r\n                               \u0027CHN\u0027, \u0027IMS_ID\u0027, \u0027MDM_CUSTOMER_ID\u0027, \u0027PER_ID_DT\u0027, \u0027PER_TYP\u0027, \u0027CORE_TRX\u0027, \u0027CORE_NRX\u0027,\r\n                              \u0027CORE_NQTY\u0027, \u0027TRANS_TRX\u0027, \u0027TRANS_NRX\u0027, \u0027TRANS_DOLLARIZED_TQTY\u0027]).agg({\u0027CORE_TQTY\u0027:sum}).reset_index()\r\n                              \r\n# Add the column for null values again\r\n\r\nfile1_missing_null[\u0027KEY2\u0027] \u003d np.NaN\r\n                              \r\n                              ",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:26 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584146597593_119418249",
+      "id": "20200314-004317_1184023255_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 12:43:17 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:37 AM",
+      "dateStarted": "Mar 14, 2020 3:17:43 AM",
+      "dateFinished": "Mar 14, 2020 3:17:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "file1_missing_null[\u0027CORE_TQTY\u0027].sum()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:28 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584150999381_-604441169",
+      "id": "20200314-015639_1536828536_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "450672.9099999983\n"
+      },
+      "dateCreated": "Mar 14, 2020 1:56:39 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:43 AM",
+      "dateStarted": "Mar 14, 2020 3:17:44 AM",
+      "dateFinished": "Mar 14, 2020 3:17:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Set the proper column order\r\n\r\nfile1_final \u003d file1_missing_null[[\u0027BRE_MKT_CD\u0027,\u0027BRE_SUBMKT_CD\u0027,\u0027BRE_PRDGRP_CD\u0027, \u0027PROD_CD\u0027, \u0027INDICATION\u0027, \u0027PLAN_ID\u0027, \u0027CHN\u0027, \r\n                    \u0027IMS_ID\u0027, \u0027MDM_CUSTOMER_ID\u0027, \u0027KEY2\u0027, \u0027PER_ID_DT\u0027, \u0027PER_TYP\u0027, \u0027CORE_TRX\u0027, \u0027CORE_NRX\u0027,\r\n                    \u0027CORE_TQTY\u0027, \u0027CORE_NQTY\u0027, \u0027TRANS_TRX\u0027, \u0027TRANS_NRX\u0027, \u0027TRANS_DOLLARIZED_TQTY\u0027]]",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:30 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584150960193_-1340142363",
+      "id": "20200314-015600_2077287453_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 1:56:00 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:44 AM",
+      "dateStarted": "Mar 14, 2020 3:17:44 AM",
+      "dateFinished": "Mar 14, 2020 3:17:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Make file 2\r\n\r\nfile2_final \u003d file1_final[[\u0027BRE_MKT_CD\u0027,\u0027BRE_SUBMKT_CD\u0027,\u0027BRE_PRDGRP_CD\u0027, \u0027PROD_CD\u0027, \u0027INDICATION\u0027, \u0027CHN\u0027, \r\n                    \u0027PER_ID_DT\u0027, \u0027PER_TYP\u0027, \u0027CORE_TRX\u0027, \u0027CORE_NRX\u0027,\r\n                    \u0027CORE_TQTY\u0027, \u0027CORE_NQTY\u0027, \u0027TRANS_TRX\u0027, \u0027TRANS_NRX\u0027, \u0027TRANS_DOLLARIZED_TQTY\u0027]]",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:16:32 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584150955979_145388464",
+      "id": "20200314-015555_580216379_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 1:55:55 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:44 AM",
+      "dateStarted": "Mar 14, 2020 3:17:44 AM",
+      "dateFinished": "Mar 14, 2020 3:17:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Create hash tables necessary to map the HCPs from HCP table\r\n\r\n\r\nfile1_final[\u0027IMS_ID\u0027] \u003d file1_final[\u0027IMS_ID\u0027].astype(str)\r\n\r\nmdm_dict \u003d pd.Series(hcp.hcp_system_id.values,index\u003dhcp.imsrxerid).to_dict() \r\nlast_dict \u003d pd.Series(hcp.lastname.values,index\u003dhcp.imsrxerid).to_dict()\r\nfirst_dict \u003d pd.Series(hcp.firstname.values,index\u003dhcp.imsrxerid).to_dict()\r\nucbspec_dict \u003d pd.Series(hcp.ucbspecialty.values,index\u003dhcp.imsrxerid).to_dict()\r\nhcpspec_dict \u003d pd.Series(hcp.hcpprimaryspeacility.values,index\u003dhcp.imsrxerid).to_dict()\r\nprocode_dict \u003d pd.Series(hcp.professioncode.values,index\u003dhcp.imsrxerid).to_dict()\r\npdrp_dict \u003d pd.Series(hcp.pdrp.values,index\u003dhcp.imsrxerid).to_dict()\r\n\r\n\r\n# #Convert values to strings\r\n# ims_dict \u003d pd.Series(hcp.imsrxerid.values,index\u003dhcp.npi).to_dict()\r\n# mdm_dict \u003d dict(zip([str(value) for value in mdm_dict.keys()], mdm_dict.values()))\r\n# last_dict \u003d dict(zip([str(value) for value in last_dict.keys()], last_dict.values()))\r\n# first_dict \u003d dict(zip([str(value) for value in first_dict.keys()], first_dict.values()))\r\n# ucbspec_dict \u003d dict(zip([str(value) for value in ucbspec_dict.keys()], ucbspec_dict.values()))\r\n# hcpspec_dict \u003d dict(zip([str(value) for value in hcpspec_dict.keys()], hcpspec_dict.values()))\r\n# procode_dict \u003d dict(zip([str(value) for value in procode_dict.keys()], procode_dict.values()))\r\n# pdrp_dict \u003d dict(zip([str(value) for value in pdrp_dict.keys()], pdrp_dict.values()))",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:17:59 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584150944996_310415094",
+      "id": "20200314-015544_1414057766_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 1:55:44 AM",
+      "dateSubmitted": "Mar 14, 2020 3:17:59 AM",
+      "dateStarted": "Mar 14, 2020 3:17:59 AM",
+      "dateFinished": "Mar 14, 2020 3:18:19 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "# Create file 3 dataframe and do mapping\r\n\r\nfile3_final \u003d pd.DataFrame()\r\nfile3_final[\u0027IMS_ID\u0027] \u003d file1_final[\u0027IMS_ID\u0027].unique()\r\nfile3_final[\u0027PAY_YEAR\u0027] \u003d 2020\r\nfile3_final[\u0027PAY_PERIOD\u0027] \u003d 2\r\n\r\nfile3_final[\u0027MDM_CUSTOMER_ID\u0027] \u003d file3_final[\u0027IMS_ID\u0027].map(mdm_dict)\r\nfile3_final[\u0027FIRST_NAME\u0027] \u003d file3_final[\u0027IMS_ID\u0027].map(first_dict)\r\nfile3_final[\u0027LAST_NAME\u0027] \u003d file3_final[\u0027IMS_ID\u0027].map(last_dict)\r\nfile3_final[\u0027UCB_SPECIALTY\u0027] \u003d file3_final[\u0027IMS_ID\u0027].map(ucbspec_dict)\r\nfile3_final[\u0027UCB_SUB_SPECIALTY\u0027] \u003d np.NaN\r\nfile3_final[\u0027PRIMARY_SPECIALTY\u0027] \u003d file3_final[\u0027IMS_ID\u0027].map(hcpspec_dict)\r\nfile3_final[\u0027SUB_SPECIALTY\u0027] \u003d np.NaN\r\nfile3_final[\u0027PROFESSION_DESC\u0027] \u003d file3_final[\u0027IMS_ID\u0027].map(procode_dict)\r\nfile3_final[\u0027PDRP_FLAG\u0027] \u003d file3_final[\u0027IMS_ID\u0027].map(pdrp_dict)\r\n\r\nfile3_final \u003d file3_final[[\u0027PAY_YEAR\u0027, \u0027PAY_PERIOD\u0027, \u0027IMS_ID\u0027, \u0027MDM_CUSTOMER_ID\u0027, \u0027FIRST_NAME\u0027, \u0027LAST_NAME\u0027, \u0027UCB_SPECIALTY\u0027, \r\n\u0027UCB_SUB_SPECIALTY\u0027,\u0027PRIMARY_SPECIALTY\u0027, \u0027SUB_SPECIALTY\u0027, \u0027PROFESSION_DESC\u0027, \u0027PDRP_FLAG\u0027]]",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:18:02 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "paragraphProgress": {
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584150940501_-1001193906",
+      "id": "20200314-015540_668208950_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Mar 14, 2020 1:55:40 AM",
+      "dateSubmitted": "Mar 14, 2020 3:18:03 AM",
+      "dateStarted": "Mar 14, 2020 3:18:19 AM",
+      "dateFinished": "Mar 14, 2020 3:18:40 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "file3_final.head()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:18:07 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584152914641_1059769679",
+      "id": "20200314-022834_1682637913_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "   PAY_YEAR  PAY_PERIOD   IMS_ID MDM_CUSTOMER_ID FIRST_NAME    LAST_NAME  \\\n0      2020           2  0004369         9qEexNp       JOHN      GRIFFIN   \n1      2020           2  0007994         9z9SxzN      PETER        DEMOS   \n2      2020           2  0010379         8UbcTfg       PAUL       HOWARD   \n3      2020           2  0011375         71oxqgg      WAYNE       RISKIN   \n4      2020           2  0013384         kbCUe8P       JOEL  SILVERFIELD   \n\n  UCB_SPECIALTY  UCB_SUB_SPECIALTY PRIMARY_SPECIALTY  SUB_SPECIALTY  \\\n0  RHEUMATOLOGY                NaN      RHEUMATOLOGY            NaN   \n1   DERMATOLOGY                NaN       DERMATOLOGY            NaN   \n2  RHEUMATOLOGY                NaN      RHEUMATOLOGY            NaN   \n3  RHEUMATOLOGY                NaN      RHEUMATOLOGY            NaN   \n4  RHEUMATOLOGY                NaN      RHEUMATOLOGY            NaN   \n\n  PROFESSION_DESC PDRP_FLAG  \n0              01     False  \n1              01     False  \n2              01      True  \n3              01     False  \n4              01     False  \n"
+      },
+      "dateCreated": "Mar 14, 2020 2:28:34 AM",
+      "dateSubmitted": "Mar 14, 2020 3:18:20 AM",
+      "dateStarted": "Mar 14, 2020 3:18:40 AM",
+      "dateFinished": "Mar 14, 2020 3:18:40 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "file3_final.isnull().sum()",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 3:18:35 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584152706434_-1394080541",
+      "id": "20200314-022506_168675304_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "PAY_YEAR                 0\nPAY_PERIOD               0\nIMS_ID                   0\nMDM_CUSTOMER_ID          0\nFIRST_NAME               0\nLAST_NAME                0\nUCB_SPECIALTY            0\nUCB_SUB_SPECIALTY    13038\nPRIMARY_SPECIALTY        0\nSUB_SPECIALTY        13038\nPROFESSION_DESC          0\nPDRP_FLAG                0\ndtype: int64\n"
+      },
+      "dateCreated": "Mar 14, 2020 2:25:06 AM",
+      "dateSubmitted": "Mar 14, 2020 3:18:40 AM",
+      "dateStarted": "Mar 14, 2020 3:18:40 AM",
+      "dateFinished": "Mar 14, 2020 3:18:40 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "hcp.head(50)",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 2:30:13 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584153005947_1017850",
+      "id": "20200314-023005_750882535_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "   imsrxerid         npi hcp_system_id      firstname          lastname  \\\n0          0           0       00sNewI         ELAINE              MAIR   \n1          0           0       012XVSo           JEFF             BROWN   \n2          0           0       018KDjD        SHELLEY             JAMAL   \n3          0  1760598023       01JM6OU          IRENE           TARIMAN   \n4          0  1225598261       01LZrtw        VANESSA         HERNANDEZ   \n5          0           0       01X1BYE          GRACE         CHYTRACEK   \n6          0           0       01X9VHS     MARIAJESUS             SOULA   \n7    7349677  1043872914       01Z4dig         KELSEY           NEWCOME   \n8    7348646  1740842152       01k6rfC          AMBER            DURNIL   \n9    7311403  1902365877       01vBMGE          KIERA             HAYES   \n10   7345557  1922567700       021MtDy           SARA           EDWARDS   \n11   7352422  1790346211       021YzNO          MAMIE            KELLER   \n12   7351177  1457912966       022GZd0          SIDRA          IFTIKHAR   \n13         0  1871097873       023Dh8w           JOSH           JIMENEZ   \n14         0           0       025vQys           BETH            JOANIS   \n15         0  1245759117       027qmCc       GEORGINA           SHARMAN   \n16    973593           0       029Gydq          ALLAN        ALLBRITTON   \n17    880654           0       02D1kXe        CHARLES              TRAD   \n18         0  1386028926       02HSWf0         CONNIE             EDGAR   \n19    970629           0       02IVpmI         DONALD          DREESSEN   \n20         0  1043557424       02KcenW         ANDREA            CASTRO   \n21   1367141  1902299472       02OAEJ9        JESSICA            TRUONG   \n22         0  1134780224       02SX5WI  PRAVEEN KUMAR            RAMANI   \n23   7349957  1134780745       02SYFyg          NAVYA             AKULA   \n24    969531           0       02T3KVk         JOSEPH           COOKSEY   \n25    998828           0       02XhEiS          JACKY            HORNER   \n26    967797           0       02bWcBV              M              PAUL   \n27   7399109  1033752365       02eRLWj       MATTHIEU           LEGRAND   \n28   1746796  1508100769       02nLa0C       ASUNCION            DISINI   \n29   7304808  1003377698       02qaw49          ASHLI       FITZPATRICK   \n30   7305543  1104386051       02qbD7B          AHMED        ABDELHALIM   \n31   7387766  1477194173       02rFDjN       ISABELLE                OH   \n32   7378903  1972159143       02rzLgS          JUNHO              CHOI   \n33     51774  1790782266       02sIjdc         HERMAN          ROBINSON   \n34    866190  1518169911       02sp2su          EDWIN            MILLER   \n35   7364686  1295387629       0309ezL       JEROMICA              WARD   \n36   7365138  1124676861       0309nVr         LAUREN            SETLER   \n37   6522370  1326295023       030F1Tk        GREGORY          MILLWOOD   \n38   7289571  1104381490       032fIhs         TAISHA           JOHNSON   \n39   4797504  1497084800       03nyC3d       CALANDRA          PLATTNER   \n40         0  1952963597       03sNs12        JOHANNA            TURNER   \n41   7081753  1386095420       04AX1sm         OLIVIA          ZALEWSKI   \n42   7340483  1144880733       04D3llA        KAITLIN             LYNCH   \n43   6950184  1457919995       04GGa7U         THOMAS          DESANTIS   \n44         0           0       04LT4E4          HOLLY           DONOHUE   \n45   7345741  1164982203       04MObi4           MARK         BORNSTEIN   \n46   3835826           0       04aijQ7           LYLE            NEVALA   \n47         0  1679713234       04qDrd2        TIFFANY  BULLINER JOHNSON   \n48         0  1871799536       04wfpGR        MELYNOR          MAVREDES   \n49   3158099           0       0511zna         SHARON             SUSCO   \n\n                                ucbspecialty  \\\n0                             NOT APPLICABLE   \n1                             NOT APPLICABLE   \n2                             NOT APPLICABLE   \n3   SPECIALIST/TECHNOLOGIST/TECHNICIAN-OTHER   \n4        BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES   \n5                     CLINICAL SOCIAL WORKER   \n6                               VETERINARIAN   \n7                                OPTOMETRIST   \n8                        PHYSICIAN ASSISTANT   \n9                            FAMILY MEDICINE   \n10                   OBSTETRICS \u0026 GYNECOLOGY   \n11                       PHYSICIAN ASSISTANT   \n12                      STUDENT, HEALTH CARE   \n13       BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES   \n14                          REGISTERED NURSE   \n15       BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES   \n16                              VETERINARIAN   \n17                                   DENTIST   \n18                    CLINICAL SOCIAL WORKER   \n19                              VETERINARIAN   \n20                    CLINICAL SOCIAL WORKER   \n21                                   DENTIST   \n22                      STUDENT, HEALTH CARE   \n23                      STUDENT, HEALTH CARE   \n24                              VETERINARIAN   \n25                              VETERINARIAN   \n26                              VETERINARIAN   \n27   CRITICAL CARE MEDICINE (ANESTHESIOLOGY)   \n28            HEMATOLOGY (INTERNAL MEDICINE)   \n29                         INTERNAL MEDICINE   \n30                      STUDENT, HEALTH CARE   \n31                                PSYCHOLOGY   \n32                                   DENTIST   \n33                                 RADIOLOGY   \n34                                   DENTIST   \n35                               OPTOMETRIST   \n36                        NURSE PRACTITIONER   \n37                                   DENTIST   \n38                        NURSE PRACTITIONER   \n39                                PSYCHOLOGY   \n40                    CLINICAL SOCIAL WORKER   \n41                                PHARMACIST   \n42               CRITICAL CARE MEDICINE (IM)   \n43                         INTERNAL MEDICINE   \n44                          REGISTERED NURSE   \n45                      STUDENT, HEALTH CARE   \n46                                PHARMACIST   \n47                          PHYSICAL THERAPY   \n48                          PHYSICAL THERAPY   \n49                          REGISTERED NURSE   \n\n                        hcpprimaryspeacility professioncode  pdrp  \n0                             NOT APPLICABLE             16   0.0  \n1                             NOT APPLICABLE             16   0.0  \n2                             NOT APPLICABLE             16   0.0  \n3   SPECIALIST/TECHNOLOGIST/TECHNICIAN-OTHER             97   0.0  \n4        BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES             22   0.0  \n5                     CLINICAL SOCIAL WORKER             15   0.0  \n6                               VETERINARIAN             05   0.0  \n7                                OPTOMETRIST             09   0.0  \n8                        PHYSICIAN ASSISTANT             07   0.0  \n9                            FAMILY MEDICINE             01   0.0  \n10                   OBSTETRICS \u0026 GYNECOLOGY             01   0.0  \n11                       PHYSICIAN ASSISTANT             07   0.0  \n12                      STUDENT, HEALTH CARE             01   0.0  \n13       BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES             22   0.0  \n14                          REGISTERED NURSE             06   0.0  \n15       BEHAVIORAL HEALTH \u0026 SOCIAL SERVICES             22   0.0  \n16                              VETERINARIAN             05   0.0  \n17                                   DENTIST             04   0.0  \n18                    CLINICAL SOCIAL WORKER             15   0.0  \n19                              VETERINARIAN             05   0.0  \n20                    CLINICAL SOCIAL WORKER             15   0.0  \n21                                   DENTIST             04   0.0  \n22                      STUDENT, HEALTH CARE             98   0.0  \n23                      STUDENT, HEALTH CARE             01   0.0  \n24                              VETERINARIAN             05   0.0  \n25                              VETERINARIAN             05   0.0  \n26                              VETERINARIAN             05   0.0  \n27   CRITICAL CARE MEDICINE (ANESTHESIOLOGY)             01   0.0  \n28            HEMATOLOGY (INTERNAL MEDICINE)             01   0.0  \n29                         INTERNAL MEDICINE             01   0.0  \n30                      STUDENT, HEALTH CARE             01   0.0  \n31                                PSYCHOLOGY             11   0.0  \n32                                   DENTIST             04   0.0  \n33                                 RADIOLOGY             01   0.0  \n34                                   DENTIST             04   0.0  \n35                               OPTOMETRIST             09   0.0  \n36                        NURSE PRACTITIONER             06   0.0  \n37                                   DENTIST             04   0.0  \n38                        NURSE PRACTITIONER             06   0.0  \n39                                PSYCHOLOGY             11   0.0  \n40                    CLINICAL SOCIAL WORKER             15   0.0  \n41                                PHARMACIST             17   0.0  \n42               CRITICAL CARE MEDICINE (IM)             06   0.0  \n43                         INTERNAL MEDICINE             02   0.0  \n44                          REGISTERED NURSE             06   0.0  \n45                      STUDENT, HEALTH CARE             02   0.0  \n46                                PHARMACIST             17   0.0  \n47                          PHYSICAL THERAPY             19   0.0  \n48                          PHYSICAL THERAPY             19   0.0  \n49                          REGISTERED NURSE             06   0.0  \n"
+      },
+      "dateCreated": "Mar 14, 2020 2:30:05 AM",
+      "dateSubmitted": "Mar 14, 2020 2:30:13 AM",
+      "dateStarted": "Mar 14, 2020 2:30:13 AM",
+      "dateFinished": "Mar 14, 2020 2:30:13 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "file3_final.head(100)",
+      "user": "addi.wei@ucb.com",
+      "dateUpdated": "Mar 14, 2020 2:31:04 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v1",
+      "jobName": "paragraph_1584150909242_828040282",
+      "id": "20200314-015509_803025856_q_M59NC3DKSS1584136128",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "    PAY_YEAR  PAY_PERIOD   IMS_ID MDM_CUSTOMER_ID FIRST_NAME LAST_NAME  \\\n0       2020           2  0004369             NaN        NaN       NaN   \n1       2020           2  0007994             NaN        NaN       NaN   \n2       2020           2  0010379             NaN        NaN       NaN   \n3       2020           2  0011375             NaN        NaN       NaN   \n4       2020           2  0013384             NaN        NaN       NaN   \n5       2020           2  0017466             NaN        NaN       NaN   \n6       2020           2  0017543             NaN        NaN       NaN   \n7       2020           2  0018308             NaN        NaN       NaN   \n8       2020           2  0018452             NaN        NaN       NaN   \n9       2020           2  0020821             NaN        NaN       NaN   \n10      2020           2  0024052             NaN        NaN       NaN   \n11      2020           2  0025299             NaN        NaN       NaN   \n12      2020           2  0025510             NaN        NaN       NaN   \n13      2020           2  0027161             NaN        NaN       NaN   \n14      2020           2  0027305             NaN        NaN       NaN   \n15      2020           2  0029458             NaN        NaN       NaN   \n16      2020           2  0030526             NaN        NaN       NaN   \n17      2020           2  0032073             NaN        NaN       NaN   \n18      2020           2  0035040             NaN        NaN       NaN   \n19      2020           2  0041583             NaN        NaN       NaN   \n20      2020           2  0041608             NaN        NaN       NaN   \n21      2020           2  0043469             NaN        NaN       NaN   \n22      2020           2  0046134             NaN        NaN       NaN   \n23      2020           2  0048703             NaN        NaN       NaN   \n24      2020           2  0049576             NaN        NaN       NaN   \n25      2020           2  0050414             NaN        NaN       NaN   \n26      2020           2  0054445             NaN        NaN       NaN   \n27      2020           2  0058326             NaN        NaN       NaN   \n28      2020           2  0059007             NaN        NaN       NaN   \n29      2020           2  0059200             NaN        NaN       NaN   \n..       ...         ...      ...             ...        ...       ...   \n70      2020           2  0207084             NaN        NaN       NaN   \n71      2020           2  0215346             NaN        NaN       NaN   \n72      2020           2  0237248             NaN        NaN       NaN   \n73      2020           2  0238884             NaN        NaN       NaN   \n74      2020           2  0245420             NaN        NaN       NaN   \n75      2020           2  0245479             NaN        NaN       NaN   \n76      2020           2  0245525             NaN        NaN       NaN   \n77      2020           2  0245597             NaN        NaN       NaN   \n78      2020           2  0245618             NaN        NaN       NaN   \n79      2020           2  0245623             NaN        NaN       NaN   \n80      2020           2  0245685             NaN        NaN       NaN   \n81      2020           2  0245741             NaN        NaN       NaN   \n82      2020           2  0245758             NaN        NaN       NaN   \n83      2020           2  0245771             NaN        NaN       NaN   \n84      2020           2  0245807             NaN        NaN       NaN   \n85      2020           2  0245843             NaN        NaN       NaN   \n86      2020           2  0245847             NaN        NaN       NaN   \n87      2020           2  0380745             NaN        NaN       NaN   \n88      2020           2  0388839             NaN        NaN       NaN   \n89      2020           2  0390138             NaN        NaN       NaN   \n90      2020           2  0405048             NaN        NaN       NaN   \n91      2020           2  0406901             NaN        NaN       NaN   \n92      2020           2  0430628             NaN        NaN       NaN   \n93      2020           2  0431935             NaN        NaN       NaN   \n94      2020           2  0433926             NaN        NaN       NaN   \n95      2020           2  0436271             NaN        NaN       NaN   \n96      2020           2  0448747             NaN        NaN       NaN   \n97      2020           2  0456166             NaN        NaN       NaN   \n98      2020           2  0462791             NaN        NaN       NaN   \n99      2020           2  0473424             NaN        NaN       NaN   \n\n   UCB_SPECIALTY  UCB_SUB_SPECIALTY PRIMARY_SPECIALTY  SUB_SPECIALTY  \\\n0            NaN                NaN               NaN            NaN   \n1            NaN                NaN               NaN            NaN   \n2            NaN                NaN               NaN            NaN   \n3            NaN                NaN               NaN            NaN   \n4            NaN                NaN               NaN            NaN   \n5            NaN                NaN               NaN            NaN   \n6            NaN                NaN               NaN            NaN   \n7            NaN                NaN               NaN            NaN   \n8            NaN                NaN               NaN            NaN   \n9            NaN                NaN               NaN            NaN   \n10           NaN                NaN               NaN            NaN   \n11           NaN                NaN               NaN            NaN   \n12           NaN                NaN               NaN            NaN   \n13           NaN                NaN               NaN            NaN   \n14           NaN                NaN               NaN            NaN   \n15           NaN                NaN               NaN            NaN   \n16           NaN                NaN               NaN            NaN   \n17           NaN                NaN               NaN            NaN   \n18           NaN                NaN               NaN            NaN   \n19           NaN                NaN               NaN            NaN   \n20           NaN                NaN               NaN            NaN   \n21           NaN                NaN               NaN            NaN   \n22           NaN                NaN               NaN            NaN   \n23           NaN                NaN               NaN            NaN   \n24           NaN                NaN               NaN            NaN   \n25           NaN                NaN               NaN            NaN   \n26           NaN                NaN               NaN            NaN   \n27           NaN                NaN               NaN            NaN   \n28           NaN                NaN               NaN            NaN   \n29           NaN                NaN               NaN            NaN   \n..           ...                ...               ...            ...   \n70           NaN                NaN               NaN            NaN   \n71           NaN                NaN               NaN            NaN   \n72           NaN                NaN               NaN            NaN   \n73           NaN                NaN               NaN            NaN   \n74           NaN                NaN               NaN            NaN   \n75           NaN                NaN               NaN            NaN   \n76           NaN                NaN               NaN            NaN   \n77           NaN                NaN               NaN            NaN   \n78           NaN                NaN               NaN            NaN   \n79           NaN                NaN               NaN            NaN   \n80           NaN                NaN               NaN            NaN   \n81           NaN                NaN               NaN            NaN   \n82           NaN                NaN               NaN            NaN   \n83           NaN                NaN               NaN            NaN   \n84           NaN                NaN               NaN            NaN   \n85           NaN                NaN               NaN            NaN   \n86           NaN                NaN               NaN            NaN   \n87           NaN                NaN               NaN            NaN   \n88           NaN                NaN               NaN            NaN   \n89           NaN                NaN               NaN            NaN   \n90           NaN                NaN               NaN            NaN   \n91           NaN                NaN               NaN            NaN   \n92           NaN                NaN               NaN            NaN   \n93           NaN                NaN               NaN            NaN   \n94           NaN                NaN               NaN            NaN   \n95           NaN                NaN               NaN            NaN   \n96           NaN                NaN               NaN            NaN   \n97           NaN                NaN               NaN            NaN   \n98           NaN                NaN               NaN            NaN   \n99           NaN                NaN               NaN            NaN   \n\n   PROFESSION_DESC  PDRP_FLAG  \n0              NaN        NaN  \n1              NaN        NaN  \n2              NaN        NaN  \n3              NaN        NaN  \n4              NaN        NaN  \n5              NaN        NaN  \n6              NaN        NaN  \n7              NaN        NaN  \n8              NaN        NaN  \n9              NaN        NaN  \n10             NaN        NaN  \n11             NaN        NaN  \n12             NaN        NaN  \n13             NaN        NaN  \n14             NaN        NaN  \n15             NaN        NaN  \n16             NaN        NaN  \n17             NaN        NaN  \n18             NaN        NaN  \n19             NaN        NaN  \n20             NaN        NaN  \n21             NaN        NaN  \n22             NaN        NaN  \n23             NaN        NaN  \n24             NaN        NaN  \n25             NaN        NaN  \n26             NaN        NaN  \n27             NaN        NaN  \n28             NaN        NaN  \n29             NaN        NaN  \n..             ...        ...  \n70             NaN        NaN  \n71             NaN        NaN  \n72             NaN        NaN  \n73             NaN        NaN  \n74             NaN        NaN  \n75             NaN        NaN  \n76             NaN        NaN  \n77             NaN        NaN  \n78             NaN        NaN  \n79             NaN        NaN  \n80             NaN        NaN  \n81             NaN        NaN  \n82             NaN        NaN  \n83             NaN        NaN  \n84             NaN        NaN  \n85             NaN        NaN  \n86             NaN        NaN  \n87             NaN        NaN  \n88             NaN        NaN  \n89             NaN        NaN  \n90             NaN        NaN  \n91             NaN        NaN  \n92             NaN        NaN  \n93             NaN        NaN  \n94             NaN        NaN  \n95             NaN        NaN  \n96             NaN        NaN  \n97             NaN        NaN  \n98             NaN        NaN  \n99             NaN        NaN  \n\n[100 rows x 12 columns]\n"
+      },
+      "dateCreated": "Mar 14, 2020 1:55:09 AM",
+      "dateSubmitted": "Mar 14, 2020 2:31:04 AM",
+      "dateStarted": "Mar 14, 2020 2:31:04 AM",
+      "dateFinished": "Mar 14, 2020 2:31:04 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 1000
+    },
+    {
+      "text": "",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v0",
+      "jobName": "paragraph_1584151227008_323894985",
+      "id": "20200314-020027_685225419_q_M59NC3DKSS1584136128",
+      "dateCreated": "Mar 14, 2020 2:00:27 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 1000
+    }
+  ],
+  "name": "Offline Anthem Project",
+  "id": "M59NC3DKSS1584136128",
+  "angularObjects": {
+    "2EKF66FKY913671566937816621:shared_process": [],
+    "2EMT12S5P913671566937816629:shared_process": [],
+    "2EN4V3MD5913671566937816625:shared_process": [],
+    "2EKXJUYHA913671566937820009:shared_process": []
+  },
+  "config": {
+    "isDashboard": false,
+    "defaultLang": "pyspark"
+  },
+  "info": {},
+  "source": "FCN"
+}
